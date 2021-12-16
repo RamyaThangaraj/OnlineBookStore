@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -45,6 +46,9 @@ public class User {
 
 	@Column(name = "mobile_number")
 	private long mobileNum;
+
+	@Transient
+	private String methodName;
 
 	@ManyToMany
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))

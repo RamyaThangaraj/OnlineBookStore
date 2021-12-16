@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sampleproject.obs.auth.payload.request.LoginRequest;
 import com.sampleproject.obs.auth.payload.request.SignupRequest;
 import com.sampleproject.obs.auth.service.AuthService;
+import com.sampleproject.obs.data.exception.PublishingMirrorNodeException;
+import com.sampleproject.obs.data.exception.TokenInfoException;
 @CrossOrigin
 @RestController
 @RequestMapping("/obs")
@@ -25,7 +27,7 @@ public class AuthController {
 	///api/obs/auth/signup
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest , HttpServletRequest request) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest , HttpServletRequest request) throws TokenInfoException, PublishingMirrorNodeException {
 		return authService.singUpReq(signUpRequest, request);
 	}
 	

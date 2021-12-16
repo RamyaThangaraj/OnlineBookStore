@@ -1,0 +1,22 @@
+spring:
+  cloud:
+   gateway:
+         routes:
+         #Route Mapping
+         - id: OnlineBookStore_Admin
+           uri: http://localhost:8132
+           predicates:
+             - Path=/obs/**
+             
+         #Route Mapping
+         - id: OnlineBookStore_Auth
+           uri: http://localhost:8131
+           predicates:
+             - Path=/obs/**
+             
+         #Route Mapping
+         - id: OnlineBookStore_Buyer
+           uri: http://localhost:8133
+           predicates:
+             - Path=/obs/**
+   

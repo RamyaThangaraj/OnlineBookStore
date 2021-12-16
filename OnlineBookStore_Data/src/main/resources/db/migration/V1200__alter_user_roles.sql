@@ -1,0 +1,2 @@
+INSERT INTO roles (id, name) VALUES ('9ab2cb7e-7c27-11eb-9439-0242ac130002', 'ROLE_BUYER');
+INSERT INTO roles (id, name) VALUES ('bae4460c-7c27-11eb-9439-0242ac130002', 'ROLE_ADMIN');

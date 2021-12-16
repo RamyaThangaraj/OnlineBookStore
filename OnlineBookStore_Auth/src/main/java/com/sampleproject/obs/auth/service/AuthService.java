@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.sampleproject.obs.auth.payload.request.LoginRequest;
 import com.sampleproject.obs.auth.payload.request.SignupRequest;
+import com.sampleproject.obs.data.exception.PublishingMirrorNodeException;
+import com.sampleproject.obs.data.exception.TokenInfoException;
 
 @Service
 public interface AuthService {
 
-	ResponseEntity<?> singUpReq(@Valid @RequestBody SignupRequest signUpRequest, HttpServletRequest request);
+	ResponseEntity<?> singUpReq(@Valid @RequestBody SignupRequest signUpRequest, HttpServletRequest request) throws TokenInfoException, PublishingMirrorNodeException;
 
 	ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequest loginRequest);
 

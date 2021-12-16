@@ -80,32 +80,28 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 		<dependency>
-		    <groupId>joda-time</groupId>
-		    <artifactId>joda-time</artifactId>
-		    <version>2.10.10</version>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.10.10</version>
 		</dependency>
-	<!-- 	 <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-web</artifactId>
-    <version>4.2.2.RELEASE</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-security</artifactId>
-    <version>1.5.2.RELEASE</version>
-</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-web</artifactId> 
+			<version>4.2.2.RELEASE</version> </dependency> <dependency> <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-security</artifactId> <version>1.5.2.RELEASE</version> 
+			</dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-joda -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.datatype</groupId>
-		    <artifactId>jackson-datatype-joda</artifactId>
-		    </dependency>
-		   <!--    <dependency>
-      <groupId>javax.persistence</groupId>
-        <artifactId>javax.persistence-api</artifactId>
-        <version>2.2</version>
-    </dependency> -->
-		   
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-joda</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+		
+		<!-- <dependency> <groupId>javax.persistence</groupId> <artifactId>javax.persistence-api</artifactId> 
+			<version>2.2</version> </dependency> -->
+
 	</dependencies>
 
 	<build>

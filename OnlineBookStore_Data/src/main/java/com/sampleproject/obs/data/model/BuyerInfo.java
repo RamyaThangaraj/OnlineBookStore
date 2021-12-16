@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.joda.time.DateTime;
@@ -50,6 +51,8 @@ public class BuyerInfo {
 //	@JoinColumn(name="quantity", referencedColumnName = "no_of_book_available")
 	private int quantity;
 
+	@Transient
+	private String methodName;
 	
 	private String book_id;
 

@@ -60,19 +60,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// we don't need CSRF because our token is invulnerable
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				// don't create session
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-				.antMatchers("/obs/**").permitAll().antMatchers("/obs/**").permitAll().antMatchers("/v2/**").permitAll()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.authorizeRequests()
+				.antMatchers("/obs/**").permitAll()
+				.antMatchers("/obs/**").permitAll()
+				.antMatchers("/v2/**").permitAll()
 				// allow anonymous resource requests
-				.antMatchers("/swagger-ui/**").permitAll().antMatchers("/webjars/**").permitAll()
-				.antMatchers("/swagger-resources/**").permitAll().antMatchers("/actuator/**").permitAll()
-//            .antMatchers("/v2/**").permitAll()
-//            .antMatchers("/api/hcs/publishmirronode/user").permitAll()
-//            .antMatchers("/api/token/transfer").permitAll()
-//            .antMatchers("/api/hedera/createwallet").permitAll()
+				.antMatchers("/swagger-ui/**").permitAll()
+				.antMatchers("/webjars/**").permitAll()
+				.antMatchers("/swagger-resources/**").permitAll()
+				.antMatchers("/actuator/**").permitAll()
+				.antMatchers("/api/hcs/publishmirronode/user").permitAll()
+				.antMatchers("/api/hts/**").permitAll()
+				.antMatchers("/api/hedera/createwallet").permitAll()
+				
 //            .antMatchers("/api/nftreport/createFile").permitAll()
-//            .antMatchers("/api/hts/createNFTToken").permitAll()
-//            .antMatchers("/api/hts/associatkycuser").permitAll()
-				.anyRequest().authenticated();
+				// .antMatchers("/api/hts/createNFTToken").permitAll()
+				.antMatchers("/api/hts/associatkycuser").permitAll().anyRequest().authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}

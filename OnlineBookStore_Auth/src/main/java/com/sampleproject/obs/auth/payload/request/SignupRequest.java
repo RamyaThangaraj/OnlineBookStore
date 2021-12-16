@@ -20,6 +20,9 @@ private String name;
 	private String email;
 	
 	@NotNull
+	private String address;
+	
+	@NotNull
 	private String password;
 	
 	@NotNull
